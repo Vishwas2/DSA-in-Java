@@ -95,3 +95,38 @@ cut the array in half see if 1 is first half or second half. Since the array is 
 we repeat this process until we get the desired number(1 in this case). It took us 3 steps to reach the number 1 in an array 
 of 8 numbers and 2^3 = 8 . Now we take this and convert it into logarithm which becomes log<sub> 2 </sub>8 = 3. O(log n) is 
 very efficient (next best thing after O(1)).
+
+## Different terms for inputs
+Consider the following code :
+````java
+public class Main{
+    public static void printItems(int a, int b){
+        for (int i = 0;i<a;i++){
+         System.out.println(i);
+        }
+        for (int j = 0;j<b;j++){
+         System.out.println(j);
+        }
+    }
+}
+````
+You might think that the time complexity of the above code is O(2n) and we drop the constant, so it becomes O(n) but, that
+would be wrong. Because a is not equal to n and b is also not equal to n. The time complexity of the above code is O(a+b)
+and that is as far as you can simplify this. Likewise instead of one loop after another if we had one inside another then
+the time complexity would be O(a*b)
+
+## Big O of Array Lists
+We will use an array list instead of an array because we need a data structure that will be dynamic and allow us to add new 
+items but a lot of the concepts will apply to arrays also.  
+If we want to add or delete an element at the back of an array list, there is nothing that needs to be re-indexed in the
+array list. It is one operation to add or remove something (time complexity = O(1)). But if we need to add or delete any 
+element to the index 0 then we will have to change the position of every other element in the list. The time complexity in
+this case would be O(n). If we want to look for an item by value then we will have to traverse through the entire list(worst case)
+and the time complexity will be O(n). On the other hand, if we were looking by index then it will only take 1 operation and
+the time complexity will be O(1)
+
+![1_5ZLci3SuR0zM_QlZOADv8Q](https://github.com/Vishwas2/DSA-in-Java/assets/67436082/78804dfd-bd6d-4ed7-b095-dcf4aa949dcd)
+***
+![image](https://github.com/Vishwas2/DSA-in-Java/assets/67436082/99085325-7bf5-4bce-a79a-921ff6b981ca)
+***
+![image](https://github.com/Vishwas2/DSA-in-Java/assets/67436082/8fc1507e-37d1-48d7-a0ed-d54c9e455860)
