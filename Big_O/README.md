@@ -1,4 +1,4 @@
-_# Big O
+# Big O
 It is a way of comparing two or more codes mathematically about how efficient they run.
 ***
 
@@ -14,52 +14,78 @@ Technically Big O is always worst case
 
 ## O(n)
  Code Example :  
- > public static void printItems(int n){  
- > for (int i = 0; i<n; i++){  
- > system.out.println(i);  
- > }}
+````java
+public class Main{
+    public static void printItems(int n){
+        for (int i = 0; i<n;i++){
+         System.out.println(i);
+        }
+    }
+}
+````
  * The above given code is O(n) because we have to n operation for input n.
 
 ## Drop Constants
  Consider the following code :
-> public static void printItems(int n){  
-> for (int i = 0; i<n; i++){  
-> System.out.println(i);}  
-> for (int j = 0; j<n; j++){  
-> System.out.println(j);  
-> }}
+````java
+public class Main{
+    public static void printItems(int n){
+        for (int i = 0;i<n; i++){
+         System.out.println(i);
+        }
+        for (int j = 0;j<n; j++){
+         System.out.println(j);
+        }
+    }
+}
+````
 * The above code performs 2n operations for input n. You might think that the time complexity will now be O(2n), but that
 would be incorrect. The time complexity in this case is O(n) because we dropped the constant 2. It doesn't matter what the
 constant is, we have to drop it for simplification.
 
 ## O(n<sup>2</sup>)
 Consider the following example :
-> public static void printItems(int n){  
-> for (int i = 0; i<n; i++){  
-> for (int j = 0; j<n; j++){  
-> System.out.println(i + " " + j);  
-> }}}
+````java
+public class Main{
+    public static void printItems(int n){
+        for (int i = 0; i<n;i++){
+            for (int j = 0;j<n;j++){
+             System.out.println(i+" "+j);
+            }
+        }
+    }
+}
+````
 * In the above code if you give 10 as input, it will perform 100 operations. So, for an input of n this code will perform
  n<sup>2</sup> operations. The time complexity of the above code is O(n<sup>2</sup>).
 
 ## Drop Non-Dominants 
 Consider the following example :
-> public static void printItems(int n){  
-> for (int i = 0; i<n; i++){  
-> for (int j = 0; j<n; j++){  
-> System.out.println(i + " " + j);  
-> }}  
-> for (int k = 0; k<n; k++){  
-> System.out.println(k);  
-> }}
+````java
+public class Main{
+    public static void printItems(int n){
+        for (int i = 0; i<n; i++){
+            for (int j = 0; j<n; j++){
+             System.out.println(i+" "+j);
+            }
+        }
+        for (int k = 0;k<n;k++){
+         System.out.println(k);
+        }
+    }
+}
+````
 * The above code performs n<sup>2</sup> + n operations for n as input. As the value of n becomes very large, n becomes very 
 small as compared to n<sup>2</sup> so we write the time complexity for this code as O(n<sup>2</sup>).
 
 ## O(1)
 Consider the following code :
-> public static int addItems(int n) {  
-> return n+n;  
-> }
+```java
+public class Main{
+public static int addItems(int n) {
+    return n+n;
+}}
+```
 * In the above code it doesn't matter what is the value of n, there is only going to be one operation. This is O(1). In 
 this situation as n grows the number of operations remain the same.
 
